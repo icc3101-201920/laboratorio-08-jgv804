@@ -5,10 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace Laboratorio_7_OOP_201902
 {
+    [Serializable]
     public class Game
     {
         //Constantes
@@ -125,12 +128,32 @@ namespace Laboratorio_7_OOP_201902
             int firstOrSecondUser = ActivePlayer.Id == 0 ? 0 : 1;
             int winner = -1;
             bool bothPlayersPlayed = false;
-            
+            string pat = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + @"\Files\Save.bin";
+            if (File.Exists(pat))
+            {
+                Visualization.ShowProgramMessage("a save file already exists in the directory, would you like to load it?");
+                Visualization.ShowProgramMessage("(0) Yes (1) no");
+                userInput = Visualization.GetUserInput(1);
+                if (userInput == 0)
+                {
+                    Visualization.ShowProgramMessage("The savefile has been saved");
+                    this.LoadState();
+                }
+                else
+                {
+                    Visualization.ShowProgramMessage("The game will play naturally");
+                }
+
+
+
+
+            }
 
             while (turn < 4 && !CheckIfEndGame())
             {
                 bool drawCard = false;
                 //turno 0 o configuracion
+
                 if (turn == 0)
                 {
                     for (int _ = 0; _<Players.Length; _++)
@@ -173,6 +196,7 @@ namespace Laboratorio_7_OOP_201902
                         firstOrSecondUser = ActivePlayer.Id == 0 ? 1 : 0;
                     }
                     turn += 1;
+                    this.SaveState();
                 }
                 //turnos siguientes
                 else
@@ -230,12 +254,14 @@ namespace Laboratorio_7_OOP_201902
                             if (ActivePlayer.Hand.Cards.Count == 0)
                             {
                                 firstOrSecondUser = ActivePlayer.Id == 0 ? 1 : 0;
+                                this.SaveState();
                                 break;
                             }
                         }
                         else
                         {
                             firstOrSecondUser = ActivePlayer.Id == 0 ? 1 : 0;
+                            this.SaveState();
                             break;
                         }
                     }
@@ -243,6 +269,7 @@ namespace Laboratorio_7_OOP_201902
                     if (!bothPlayersPlayed)
                     {
                         bothPlayersPlayed = true;
+                        this.SaveState();
                         drawCard = false;
                     }
                     //Si ambos jugaron obtener el ganador de la ronda, reiniciar el tablero y pasar de turno.
