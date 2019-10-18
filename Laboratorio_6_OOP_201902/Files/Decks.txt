@@ -1,0 +1,64 @@
+START
+CombatCard,Dethmold,range,null,6,false
+SpecialCard,Biting Frost,weather,Sets the strength of all melee cards to 1 for both players
+SpecialCard,Biting Frost,weather,Sets the strength of all melee cards to 1 for both players
+SpecialCard,Clear Weather,weather,Removes all Weather Card (Biting Frost, Impenetrable Fog and Torrential Rain) effects
+SpecialCard,Clear Weather,weather,Removes all Weather Card (Biting Frost, Impenetrable Fog and Torrential Rain) effects
+SpecialCard,Impenetrable Fog,weather,Sets the strength of all range cards to 1 for both players
+SpecialCard,Impenetrable Fog,weather,Sets the strength of all range cards to 1 for both players
+SpecialCard,Torrential Rain,weather,Sets the strength of all longRange cards to 1 for both players
+SpecialCard,Torrential Rain,weather,Sets the strength of all longRange cards to 1 for both players
+CombatCard,Ballista,longRange,null,6,false
+CombatCard,Kaedweni Siege Expert,longRange,Morale Boost: Adds +1 to all units in the row (excluding itself),1,false
+CombatCard,Kaedweni Siege Expert,longRange,Morale Boost: Adds +1 to all units in the row (excluding itself),1,false
+CombatCard,Keira Metz,range,null,5,false
+CombatCard,Dun Banner Medic,longRange,null,5,false
+CombatCard,Prince Stennis,melee,Spy: Place on your opponent's battlefield (counts towards opponent's total) and draw 2 cards from your deck,5,false
+CombatCard,Redanian Foot Soldier,melee,null,1,false
+CombatCard,Sabrina Glevissig,range,null,4,false
+CombatCard,Sheldon Skaggs,range,null,4,false
+CombatCard,Siege Tower,longRange,null,6,false
+CombatCard,Poor Infantry,melee,Tight Bond: Place next to a card with the same name to double the strength of both cards,1,false
+CombatCard,Poor Infantry,melee,Tight Bond: Place next to a card with the same name to double the strength of both cards,1,false
+CombatCard,Sile de Tansarville,range,null,5,false
+CombatCard,Siegfried of Denesle,melee,null,5,false
+CombatCard,Trebuchet,longRange,null,6,false
+CombatCard,Ves,melee,null,5,false
+CombatCard,Yarpen Zigrin,melee,null,2,false
+CombatCard,Vernon Roche,melee,null,10,true
+SpecialCard,Commander's Horn,buff,Doubles the strength of all unit cards in that row. Limited to 1 per row
+SpecialCard,Commander's Horn,buff,Doubles the strength of all unit cards in that row. Limited to 1 per row
+SpecialCard,Commander's Horn,buff,Doubles the strength of all unit cards in that row. Limited to 1 per row
+END
+START
+CombatCard,Dethmold,range,null,6,false
+SpecialCard,Biting Frost,weather,Sets the strength of all melee cards to 1 for both players
+SpecialCard,Biting Frost,weather,Sets the strength of all melee cards to 1 for both players
+SpecialCard,Clear Weather,weather,Removes all Weather Card (Biting Frost, Impenetrable Fog and Torrential Rain) effects
+CombatCard,Thaler,longRange,Spy: Place on your opponent's battlefield (counts towards opponent's total) and draw 2 cards from your deck,5,false
+SpecialCard,Impenetrable Fog,weather,Sets the strength of all range cards to 1 for both players
+SpecialCard,Impenetrable Fog,weather,Sets the strength of all range cards to 1 for both players
+SpecialCard,Torrential Rain,weather,Sets the strength of all longRange cards to 1 for both players
+SpecialCard,Torrential Rain,weather,Sets the strength of all longRange cards to 1 for both players
+CombatCard,Ballista,longRange,null,6,false
+CombatCard,Kaedweni Siege Expert,longRange,Morale Boost: Adds +1 to all units in the row (excluding itself),1,false
+CombatCard,Keira Metz,range,null,5,false
+CombatCard,Dun Banner Medic,longRange,null,5,false
+CombatCard,Prince Stennis,melee,Spy: Place on your opponent's battlefield (counts towards opponent's total) and draw 2 cards from your deck,5,false
+CombatCard,Redanian Foot Soldier,melee,null,1,false
+CombatCard,Sabrina Glevissig,range,null,4,false
+CombatCard,Sheldon Skaggs,range,null,4,false
+CombatCard,Siege Tower,longRange,null,6,false
+CombatCard,Poor Infantry,melee,Tight Bond: Place next to a card with the same name to double the strength of both cards,1,false
+CombatCard,Poor Infantry,melee,Tight Bond: Place next to a card with the same name to double the strength of both cards,1,false
+CombatCard,Poor Infantry,melee,Tight Bond: Place next to a card with the same name to double the strength of both cards,1,false
+CombatCard,Sile de Tansarville,range,null,5,false
+CombatCard,Siegfried of Denesle,melee,null,5,false
+CombatCard,Trebuchet,longRange,null,6,false
+CombatCard,Ves,melee,null,5,false
+CombatCard,Yarpen Zigrin,melee,null,2,false
+CombatCard,Philippa Eilhart,range,null,10,true
+SpecialCard,Commander's Horn,buff,Doubles the strength of all unit cards in that row. Limited to 1 per row
+SpecialCard,Commander's Horn,buff,Doubles the strength of all unit cards in that row. Limited to 1 per row
+SpecialCard,Commander's Horn,buff,Doubles the strength of all unit cards in that row. Limited to 1 per row
+END

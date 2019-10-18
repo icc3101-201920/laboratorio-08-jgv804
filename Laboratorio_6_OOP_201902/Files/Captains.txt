@@ -1,0 +1,2 @@
+SpecialCard,Foltest: King of Temeria,captain, Pick an Impenetrable Fog card from your deck and play it instantly
+SpecialCard,Foltest: Lord Commander of the North,captain, Clear any weather effects (resulting from Biting Frost, Torrential Rain or Impenetrable Fog cards) in play
