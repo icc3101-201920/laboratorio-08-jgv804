@@ -221,10 +221,17 @@ namespace Laboratorio_6_OOP_201902
 
 
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + @"\Files\Save.bin";
+            Game save = new Game();
+            save.players = this.Players;
+            save.activePlayer = this.ActivePlayer;
+            save.decks = this.Decks;
+            save.captains = this.Captains;
+            save.boardGame = this.BoardGame;
+            save.turn = this.turn;
 
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
-            formatter.Serialize(stream, this);
+            formatter.Serialize(stream, save);
             stream.Close();
 
 
@@ -233,11 +240,20 @@ namespace Laboratorio_6_OOP_201902
         {
             string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + @"\Files\Save.bin";
 
+            Game load = new Game();
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
-            this = (Game)formatter.Deserialize(stream);
+            load = (Game)formatter.Deserialize(stream);
             stream.Close();
-            
+
+            this.players = load.Players;
+            this.activePlayer = load.ActivePlayer;
+            this.decks = load.Decks;
+            this.captains = load.Captains;
+            this.boardGame = load.BoardGame;
+            this.turn = load.turn;
+
+
         }
 
 
