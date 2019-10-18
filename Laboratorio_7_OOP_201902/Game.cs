@@ -130,6 +130,8 @@ namespace Laboratorio_7_OOP_201902
             int winner = -1;
             bool bothPlayersPlayed = false;
             string pat = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + @"\Files\Save.bin";
+            CombatCard CC;
+            SpecialCard CS;
             if (File.Exists(pat))
             {
                 Visualization.ShowProgramMessage("a save file already exists in the directory, would you like to load it?");
@@ -177,6 +179,27 @@ namespace Laboratorio_7_OOP_201902
                         ActivePlayer.FirstHand();
                         //Mostrar mano
                         Visualization.ShowHand(ActivePlayer.Hand);
+                        for (int gh = 0; gh < ActivePlayer.Hand.Cards.Count; gh++)
+                        {
+                            Visualization.ShowProgramMessage($"({gh}):");
+
+                            if (ActivePlayer.Hand.Cards[gh] is CombatCard)
+                            {
+
+                                CC = ActivePlayer.Hand.Cards[gh] as CombatCard;
+                                ICharacteristics CC1 = CC;
+                                Visualization.ShowCombatCardCharalist(CC1.GetCharacteristics());
+                                //Console.ReadKey();//
+                            }
+                            else
+                            {
+                                CS = ActivePlayer.Hand.Cards[gh] as SpecialCard;
+                                ICharacteristics CS1 = CS;
+                                Visualization.ShowCombatCardCharalist(CS1.GetCharacteristics());
+                                //Console.ReadKey();//
+                            }
+                        }
+                        Console.ReadKey();
                         //Mostar opciones, cambiar carta o pasar
                         Visualization.ShowListOptions(new List<string>() { "Change Card", "Pass" }, "Change 3 cards or ready to play:");
                         userInput = Visualization.GetUserInput(1);
@@ -185,11 +208,29 @@ namespace Laboratorio_7_OOP_201902
                             Visualization.ClearConsole();
                             Visualization.ShowProgramMessage($"Player {ActivePlayer.Id+1} change cards:");
                             Visualization.ShowHand(ActivePlayer.Hand);
+                            /*Visualization.ShowProgramMessage("The Card selected was:");
+
+                            if (ActivePlayer.Hand.Cards[userInput] is CombatCard)
+                            {
+                                CC = ActivePlayer.Hand.Cards[userInput] as CombatCard;
+                                ICharacteristics CC1 = CC;
+                                Visualization.ShowCombatCardCharalist(CC1.GetCharacteristics());
+                                Console.ReadKey();
+                            }
+                            else
+                            {
+                            CS = ActivePlayer.Hand.Cards[userInput] as SpecialCard;
+                            ICharacteristics CS1 = CS;
+                            Visualization.ShowCombatCardCharalist(CS1.GetCharacteristics());
+                            Console.ReadKey();
+                            }*/
                             for (int i = 0; i < DEFAULT_CHANGE_CARDS_NUMBER; i++)
                             {
                                 Visualization.ShowProgramMessage($"Input the numbers of the cards to change (max {DEFAULT_CHANGE_CARDS_NUMBER}). To stop enter -1");
                                 userInput = Visualization.GetUserInput(ActivePlayer.Hand.Cards.Count, true);
                                 if (userInput == -1) break;
+
+
                                 ActivePlayer.ChangeCard(userInput);
                                 Visualization.ShowHand(ActivePlayer.Hand);
                             }
@@ -232,6 +273,7 @@ namespace Laboratorio_7_OOP_201902
                             //Si la carta es un buff solicitar a la fila que va.
                             Visualization.ShowProgramMessage($"Input the number of the card to play. To cancel enter -1");
                             userInput = Visualization.GetUserInput(ActivePlayer.Hand.Cards.Count, true);
+                            //int CardID1 = userInput;//
                             if (userInput != -1)
                             {
                                 if (ActivePlayer.Hand.Cards[userInput].Type == EnumType.buff)
@@ -241,19 +283,49 @@ namespace Laboratorio_7_OOP_201902
                                     userInput = Visualization.GetUserInput(2);
                                     if (userInput == 0)
                                     {
+                                        Visualization.ShowProgramMessage("The card selected was:");
+                                        CS = ActivePlayer.Hand.Cards[cardId] as SpecialCard;
+                                        ICharacteristics CS1 = CS;
+                                        Visualization.ShowCombatCardCharalist(CS1.GetCharacteristics());
+                                        Console.ReadKey();
                                         ActivePlayer.PlayCard(cardId, EnumType.buffmelee);
                                     }
                                     else if (userInput == 1)
                                     {
+                                        Visualization.ShowProgramMessage("The card selected was:");
+                                        CS = ActivePlayer.Hand.Cards[cardId] as SpecialCard;
+                                        ICharacteristics CS1 = CS;
+                                        Visualization.ShowCombatCardCharalist(CS1.GetCharacteristics());
+                                        Console.ReadKey();
                                         ActivePlayer.PlayCard(cardId, EnumType.buffrange);
                                     }
                                     else
                                     {
+                                        Visualization.ShowProgramMessage("The card selected was:");
+                                        CS = ActivePlayer.Hand.Cards[cardId] as SpecialCard;
+                                        ICharacteristics CS1 = CS;
+                                        Visualization.ShowCombatCardCharalist(CS1.GetCharacteristics());
+                                        Console.ReadKey();
                                         ActivePlayer.PlayCard(cardId, EnumType.bufflongRange);
                                     }
                                 }
                                 else
                                 {
+                                    Visualization.ShowProgramMessage("The card selected was:");
+                                    if (ActivePlayer.Hand.Cards[userInput] is CombatCard)
+                                    {
+                                        CC = ActivePlayer.Hand.Cards[userInput] as CombatCard;
+                                        ICharacteristics CC1 = CC;
+                                        Visualization.ShowCombatCardCharalist(CC1.GetCharacteristics());
+                                        Console.ReadKey();
+                                    }
+                                    else
+                                    {
+                                        CS = ActivePlayer.Hand.Cards[userInput] as SpecialCard;
+                                        ICharacteristics CS1 = CS;
+                                        Visualization.ShowCombatCardCharalist(CS1.GetCharacteristics());
+                                        Console.ReadKey();
+                                    }
                                     ActivePlayer.PlayCard(userInput);
                                 }
                             }
