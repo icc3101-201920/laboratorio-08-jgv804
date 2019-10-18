@@ -1,9 +1,9 @@
-﻿using Laboratorio_6_OOP_201902.Cards;
-using Laboratorio_6_OOP_201902.Static;
+﻿using Laboratorio_7_OOP_201902.Cards;
+using Laboratorio_7_OOP_201902.Static;
 using System;
 using System.Collections.Generic;
 
-namespace Laboratorio_6_OOP_201902
+namespace Laboratorio_7_OOP_201902
 {
     class Program
     {
