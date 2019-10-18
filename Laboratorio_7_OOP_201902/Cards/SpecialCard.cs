@@ -37,7 +37,7 @@ namespace Laboratorio_7_OOP_201902.Cards
         {
             List<string> returner = new List<string>();
             returner.Add(Name);
-            returner.Add(nameof(Type));
+            returner.Add(Type.ToString());
             returner.Add(Effect);
             returner.Add(BuffType);
             

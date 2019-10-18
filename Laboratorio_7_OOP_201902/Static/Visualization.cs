@@ -3,6 +3,7 @@ using Laboratorio_7_OOP_201902.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Laboratorio_7_OOP_201902.Interfaces;
 
 namespace Laboratorio_7_OOP_201902.Static
 {
@@ -32,17 +33,26 @@ namespace Laboratorio_7_OOP_201902.Static
         public static void ShowDecks(List<Deck> decks)
         {
             Console.WriteLine("Select one Deck:");
+            ICharacteristics deckss;
+            
             for (int i = 0; i<decks.Count; i++)
             {
-                Console.WriteLine($"({i}) Deck {i+1}");
+                deckss = decks[i];
+                Console.WriteLine($"({i}) Deck{i + 1}:");
+                Visualization.ShowCharalist(deckss.GetCharacteristics());
+                //Console.WriteLine($"({i}) Deck {i+1}");//
             }
         }
         public static void ShowCaptains(List<SpecialCard> captains)
         {
             Console.WriteLine("Select one captain:");
+            ICharacteristics CAPTAINS;
             for (int i = 0; i < captains.Count; i++)
             {
-                Console.WriteLine($"({i}) {captains[i].Name}: {captains[i].Effect}");
+                CAPTAINS = captains[i];
+                Console.WriteLine($"({i})");
+                Visualization.ShowSpecialCardCharalist(CAPTAINS.GetCharacteristics());
+                //Console.WriteLine($"({i}) {captains[i].Name}: {captains[i].Effect}");//
             }
         }
         public static int GetUserInput(int maxInput, bool stopper = false)
@@ -162,7 +172,44 @@ namespace Laboratorio_7_OOP_201902.Static
             }
 
         }
+        public static void ShowCombatCardCharalist(List<string> list)
+        {
+            List<string> Desk = new List<string>(){
+            "Card Name:",
+            "Card Type:",
+            "Card Effect:",
+            "Card AttackPoints:",
+            "Is Card Hero?:"
+            
+
+            };
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine($"{Desk[i]}  [{list[i]}]");
+            }
+
+        }
+        public static void ShowSpecialCardCharalist(List<string> list)
+        {
+            List<string> Desk = new List<string>(){
+            "Card Name:",
+            "Card Type:",
+            "Card Effect:",
+            "Card Buff:"
+
+
+            };
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine($"{Desk[i]}  [{list[i]}]");
+            }
+
+        }
+
+
+
+
 
     }
-    
+
 }
