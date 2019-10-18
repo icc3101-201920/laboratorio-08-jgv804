@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Runtime.Serialization;
 
 namespace Laboratorio_6_OOP_201902
 {
@@ -156,6 +157,7 @@ namespace Laboratorio_6_OOP_201902
                     }
                     firstOrSecondUser = ActivePlayer.Id == 0 ? 1 : 0;
                 }
+                this.SaveState();
                 turn += 1;
             }
 
@@ -213,5 +215,21 @@ namespace Laboratorio_6_OOP_201902
                 captains.Add(new SpecialCard(cardDetails[1], (EnumType)Enum.Parse(typeof(EnumType), cardDetails[2]), cardDetails[3]));
             }
         }
+        
+        public void SaveState()
+        {
+
+
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + @"\Files\Save.bin";
+
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None);
+            formatter.Serialize(stream, this);
+            stream.Close();
+
+
+        }
+
+
     }
 }

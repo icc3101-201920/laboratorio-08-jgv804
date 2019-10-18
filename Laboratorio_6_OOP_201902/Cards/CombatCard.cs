@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Laboratorio_6_OOP_201902.Cards
 {
+    [Serializable]
     public class CombatCard : Card
     {
         //Atributos

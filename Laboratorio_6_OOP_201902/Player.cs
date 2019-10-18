@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Laboratorio_6_OOP_201902
 {
+    [Serializable]
     public class Player
     {
         //Constantes
