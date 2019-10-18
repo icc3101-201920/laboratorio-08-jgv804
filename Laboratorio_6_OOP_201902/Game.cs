@@ -229,6 +229,16 @@ namespace Laboratorio_6_OOP_201902
 
 
         }
+        public void LoadState()
+        {
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + @"\Files\Save.bin";
+
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
+            this = (Game)formatter.Deserialize(stream);
+            stream.Close();
+            
+        }
 
 
     }
