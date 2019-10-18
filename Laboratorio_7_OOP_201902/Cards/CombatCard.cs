@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Laboratorio_7_OOP_201902.Interfaces;
 
 namespace Laboratorio_7_OOP_201902.Cards
 {
@@ -43,6 +44,16 @@ namespace Laboratorio_7_OOP_201902.Cards
             {
                 this.hero = value;
             }
+        }
+        public override List<string> GetCharacteristics()
+        {
+            List<string> returner = new List<string>();
+            returner.Add(Name);
+            returner.Add(nameof(Type));
+            returner.Add(Effect);
+            returner.Add(AttackPoints.ToString());
+            returner.Add(Hero.ToString());
+            return returner;
         }
 
         

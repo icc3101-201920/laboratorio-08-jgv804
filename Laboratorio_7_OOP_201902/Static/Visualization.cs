@@ -141,6 +141,27 @@ namespace Laboratorio_7_OOP_201902.Static
             Console.WriteLine();
             
         }
+        public static void ShowCharalist(List<string> list)
+        {
+            List<string> Desk = new List<string>(){
+            "Total Deck Cards:",
+            "Total Melee Cards:",
+            "Total Range Cards:",
+            "Total LongRange Cards:",
+            "Total Buff Cards:",
+            "Total Weather Cards:",
+            "Total Melee AttackPoints:",
+            "Total Range AttackPoints:",
+            "Total LongRange AttackPoints:",
+            "Total Deck AttackPoints:"
+            
+            };
+            for (int i = 0; i < list.Count; i++)
+            {
+                Console.WriteLine($"{Desk[i]}  [{list[i]}]");
+            }
+
+        }
 
     }
     

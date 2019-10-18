@@ -1,6 +1,7 @@
 ﻿using Laboratorio_7_OOP_201902.Cards;
 using Laboratorio_7_OOP_201902.Enums;
 using Laboratorio_7_OOP_201902.Static;
+using Laboratorio_7_OOP_201902.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -196,6 +197,12 @@ namespace Laboratorio_7_OOP_201902
                         firstOrSecondUser = ActivePlayer.Id == 0 ? 1 : 0;
                     }
                     turn += 1;
+
+                    /*ICharacteristics Deck1 = Players[0].Deck;
+                    ICharacteristics Deck2 = Players[1].Deck;
+                    Visualization.ShowCharalist(Deck1.GetCharacteristics());
+                    Visualization.ShowCharalist(Deck2.GetCharacteristics());
+                    Console.ReadKey();*/
                     this.SaveState();
                 }
                 //turnos siguientes
